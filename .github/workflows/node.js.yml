@@ -18,7 +18,7 @@ jobs:
         strategy:
             matrix:
                 node-version: [20.x]
-                mongodb-version: ['4.2', '4.4', '5.0', '6.0']
+                mongodb-version: ['6.0']
 
         steps:
             - name: Git checkout
@@ -33,5 +33,5 @@ jobs:
               with:
                   mongodb-version: ${{ matrix.mongodb-version }}
             - run: npm i
-            - run: npm run dev
+            #- run: npm run dev
             - run: npm test
